@@ -1,59 +1,55 @@
-# IocAngularTastifyElisabethRemeseiro
+# Tastify
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.0.
+## Autor/a
 
-## Development server
+Elisabeth Remeseiro
 
-To start a local development server, run:
+## Descripció
+
+Tastify és una aplicació web de receptes de cuina desenvolupada amb Angular. El projecte està pensat per descobrir, consultar i organitzar receptes de manera senzilla.
+
+## Versions utilitzades
+
+* Node.js: 24.21.0
+* npm: 11.19.0
+* Angular CLI: 22.2.0
+* Angular: 22.2.0
+* Git: 2.34.1
+* TypeScript: 6.0.3
+* SCSS per als estils
+
+## Com crear i executar el projecte
+
+Per crear el projecte des de zero:
+
+```bash
+ng new ioc-angular-tastify-elisabeth-remeseiro --routing --style=scss --ssr=false --standalone --file-name-style-guide=2016 --skip-git --package-manager=npm
+```
+
+Per instal·lar les dependències:
+
+```bash
+npm install
+```
+
+Per executar l'aplicació en mode desenvolupament:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Després, obrir al navegador:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```text
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Estat de l'EAC1
 
-```bash
-ng generate --help
-```
+L'EAC1 està completada. El projecte Angular està configurat, personalitzat i publicat a GitHub. La branca de treball `ra1-setup` conté la preparació inicial del projecte, l'estructura base i la personalització inicial de la interfície.
 
-## Building
+També s'ha comprovat el funcionament del hot reload durant l'execució en mode desenvolupament.
 
-To build the project run:
+## Enllaç del repositori
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+https://github.com/elisabethrb2003/ioc-angular-tastify-elisabeth-remeseiro
