@@ -8,5 +8,6 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
 })
 export class App {
+  public appName = 'Tastify';
   protected readonly title = signal('ioc-angular-tastify-elisabeth-remeseiro');
 }
