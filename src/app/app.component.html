@@ -1,30 +1,29 @@
- <div class="container">
-  <main>
-    <h1>{{ appName }}</h1>
+<main class="app-container">
+  <header class="app-header">
+    <h1>{{ appName }} 🍳</h1>
+    <p>Descobreix i organitza les teves receptes preferides.</p>
+  </header>
 
-<p>
-  Elisabeth Remeseiro — Tastify és una aplicació per descobrir,
-  consultar i organitzar receptes de cuina de manera senzilla.
-</p>
+  <section class="recipes-section">
+    <h2>Les nostres receptes</h2>
 
-<section class="card">
-  <h2>Dades bàsiques del projecte</h2>
-  <ul>
-    <li><strong>Aplicació:</strong> {{ appName }}</li>
-    <li><strong>Framework:</strong> Angular</li>
-    <li><strong>Estils:</strong> SCSS</li>
-    <li><strong>Branca:</strong> ra1-setup</li>
-  </ul>
-</section>
+    <app-recipe-filter
+      [categories]="categories"
+      (categorySelected)="onCategorySelected($event)"
+    />
 
-<p>Projecte base llest</p>
+    <app-recipe-list
+      [recipes]="filteredRecipes"
+      (recipeSelected)="onRecipeSelected($event)"
+    />
 
-  </main>
-
-  <aside>
-    <h2>Nota</h2>
-    <p>Aquest és el punt de partida de Tastify.</p>
-  </aside>
-</div>
-
-<router-outlet />
+    @if (selectedRecipe) {
+      <div class="selected-recipe">
+        <p>
+          Has seleccionat:
+          <strong>{{ selectedRecipe.title }}</strong>
+        </p>
+      </div>
+    }
+  </section>
+</main>

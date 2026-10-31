@@ -1,0 +1,21 @@
+.recipe-filter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+
+  label {
+    font-weight: 600;
+    color: #333;
+  }
+
+  select {
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: white;
+    font-size: 0.95rem;
+    cursor: pointer;
+  }
+}

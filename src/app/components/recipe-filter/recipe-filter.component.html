@@ -1,0 +1,15 @@
+<div class="recipe-filter">
+  <label for="category">Filtrar per categoria:</label>
+
+  <select
+    id="category"
+    #categorySelect
+    (change)="onCategoryChange(categorySelect.value)"
+  >
+    <option value="Totes">Totes les categories</option>
+
+    @for (category of categories; track category) {
+      <option [value]="category">{{ category }}</option>
+    }
+  </select>
+</div>

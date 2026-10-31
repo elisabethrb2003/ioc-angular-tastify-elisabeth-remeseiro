@@ -1,0 +1,17 @@
+<article class="recipe-card" (click)="selectRecipe()">
+  <div class="recipe-card-header">
+    <h3>{{ recipe.title }}</h3>
+    <app-recipe-category [category]="recipe.category" />
+  </div>
+
+  <p>{{ recipe.description }}</p>
+
+  <div class="recipe-details">
+    <span>⏱️ {{ recipe.prepTimeMinutes }} minuts</span>
+    <span>📅 {{ recipe.createdAt }}</span>
+  </div>
+
+  @if (recipe.featured) {
+    <span class="featured-label">⭐ Recepta destacada</span>
+  }
+</article>
