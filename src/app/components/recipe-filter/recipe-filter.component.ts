@@ -1,18 +1,39 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-recipe-filter',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './recipe-filter.component.html',
   styleUrl: './recipe-filter.component.scss'
 })
+
 export class RecipeFilterComponent {
   @Input() categories: string[] = [];
 
-  @Output() categorySelected = new EventEmitter<string>();
+  @Output() filtersApplied = new EventEmitter<{
+  searchText: string;
+  category: string;
+  }>();
 
-  onCategoryChange(category: string): void {
-    this.categorySelected.emit(category);
+  searchText: string = '';
+  selectedCategory: string = 'Totes';
+
+  applyFilters(): void {
+    this.filtersApplied.emit({
+      searchText: this.searchText.trim(),
+      category: this.selectedCategory
+    });
+  }
+
+  resetFilters(): void {
+    this.searchText = '';
+    this.selectedCategory = 'Totes';
+
+    this.filtersApplied.emit({
+      searchText: '',
+      category: 'Totes'
+    });
   }
 }

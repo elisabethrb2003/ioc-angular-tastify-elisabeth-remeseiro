@@ -13,9 +13,9 @@ import { RecipeFilterComponent } from './components/recipe-filter/recipe-filter.
 })
 export class App {
   public appName = 'Tastify';
-
   recipes: Recipe[] = RECIPES_MOCK;
   selectedCategory = 'Totes';
+  searchText = '';
   selectedRecipe: Recipe | null = null;
 
   get categories(): string[] {
@@ -23,17 +23,22 @@ export class App {
   }
 
   get filteredRecipes(): Recipe[] {
-    if (this.selectedCategory === 'Totes') {
-      return this.recipes;
-    }
+    return this.recipes.filter(recipe => {
+      const matchesCategory =
+        this.selectedCategory === 'Totes' ||
+        recipe.category === this.selectedCategory;
 
-    return this.recipes.filter(
-      recipe => recipe.category === this.selectedCategory
-    );
+      const matchesText =
+        recipe.title.toLowerCase().includes(this.searchText.toLowerCase()) ||
+        recipe.description.toLowerCase().includes(this.searchText.toLowerCase());
+
+      return matchesCategory && matchesText;
+    });
   }
 
-  onCategorySelected(category: string): void {
-    this.selectedCategory = category;
+  onFiltersApplied(filters: { searchText: string; category: string }): void {
+    this.searchText = filters.searchText;
+    this.selectedCategory = filters.category;
     this.selectedRecipe = null;
   }
 
