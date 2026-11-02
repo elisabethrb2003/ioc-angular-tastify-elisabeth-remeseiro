@@ -10,12 +10,24 @@
     color: #333;
   }
 
+  input,
   select {
     padding: 10px 14px;
     border: 1px solid #ccc;
     border-radius: 8px;
     background: white;
     font-size: 0.95rem;
+  }
+
+  select {
     cursor: pointer;
+  }
+
+  input:focus,
+  select:focus,
+  button:focus {
+    outline: 3px solid #e6a23c;
+    outline-offset: 3px;
+    border-color: #263b2f;
   }
 }

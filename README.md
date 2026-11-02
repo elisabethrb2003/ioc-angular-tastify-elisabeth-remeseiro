@@ -53,3 +53,40 @@ També s'ha comprovat el funcionament del hot reload durant l'execució en mode 
 ## Enllaç del repositori
 
 https://github.com/elisabethrb2003/ioc-angular-tastify-elisabeth-remeseiro
+
+## Estat de l'EAC2
+
+L'EAC2 incorpora els components necessaris per consultar i filtrar receptes a Tastify.
+
+### Branca de treball
+
+`ra2-components`
+
+### Components creats
+
+- `RecipeListComponent`: mostra el llistat de receptes.
+- `RecipeCardComponent`: mostra cada recepta individualment.
+- `RecipeCategoryComponent`: representa la categoria d'una recepta.
+- `RecipeFilterComponent`: permet cercar i filtrar receptes.
+
+### Model i dades
+
+- Model `Recipe` definit a `src/app/models/recipe.model.ts`.
+- Dades de prova definides a `src/app/data/recipes.mock.ts`.
+
+### Funcionalitats implementades
+
+- Cerca de receptes per text.
+- Filtratge per categoria.
+- Validació del formulari.
+- Comptador de resultats.
+- Visualització del detall d'una recepta.
+- Missatge quan no hi ha resultats.
+
+### Accessibilitat i disseny responsive
+
+- Enllaç per saltar directament al contingut principal.
+- Indicadors visuals de focus per a la navegació amb teclat.
+- Etiquetes associades als camps del formulari.
+- Ús de `role="status"`, `aria-live` i `role="alert"`.
+- Disseny adaptable a pantalles de diferents amplades.

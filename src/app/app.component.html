@@ -1,4 +1,8 @@
-<main class="app-container">
+<a class="skip-link" href="#main-content">
+  Salta al contingut principal
+</a>
+
+<main id="main-content" class="app-container" tabindex="-1">
   <header class="app-header">
     <h1>{{ appName }} 🍳</h1>
     <p>Descobreix i organitza les teves receptes preferides.</p>
@@ -7,7 +11,7 @@
   <section class="recipes-section">
     <h2>Les nostres receptes</h2>
 
-    <p class="results-counter">
+    <p class="results-counter" role="status" aria-live="polite">
       Resultats trobats: {{ filteredRecipes.length }}
     </p>
 
@@ -43,4 +47,3 @@
     }
   </section>
 </main>
-```

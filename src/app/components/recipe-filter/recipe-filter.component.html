@@ -15,7 +15,7 @@
     />
 
     @if (searchInput.invalid && (searchInput.dirty || searchInput.touched)) {
-      <p class="error-message">
+      <p class="error-message" role="alert">
         @if (searchInput.errors?.['required']) {
           El camp de cerca és obligatori.
         } @else if (searchInput.errors?.['minlength']) {
