@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DatePipe } from '@angular/common';
 import { Recipe } from './models/recipe.model';
 import { RECIPES_MOCK } from './data/recipes.mock';
 import { RecipeListComponent } from './components/recipe-list/recipe-list.component';
@@ -7,7 +8,7 @@ import { RecipeFilterComponent } from './components/recipe-filter/recipe-filter.
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RecipeListComponent, RecipeFilterComponent],
+  imports: [RecipeListComponent, RecipeFilterComponent, DatePipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

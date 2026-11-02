@@ -7,23 +7,40 @@
   <section class="recipes-section">
     <h2>Les nostres receptes</h2>
 
+    <p class="results-counter">
+      Resultats trobats: {{ filteredRecipes.length }}
+    </p>
+
     <app-recipe-filter
       [categories]="categories"
       (filtersApplied)="onFiltersApplied($event)"
     />
 
-    <app-recipe-list
-      [recipes]="filteredRecipes"
-      (recipeSelected)="onRecipeSelected($event)"
-    />
+    @if (filteredRecipes.length > 0) {
+      <app-recipe-list
+        [recipes]="filteredRecipes"
+        (recipeSelected)="onRecipeSelected($event)"
+      />
 
-    @if (selectedRecipe) {
-      <div class="selected-recipe">
-        <p>
-          Has seleccionat:
-          <strong>{{ selectedRecipe.title }}</strong>
+      @if (selectedRecipe) {
+        <section class="selected-recipe">
+          <h3>Detall de la recepta</h3>
+          <h4>{{ selectedRecipe.title }}</h4>
+          <p>{{ selectedRecipe.description }}</p>
+          <p>Categoria: {{ selectedRecipe.category }}</p>
+          <p>Temps de preparació: {{ selectedRecipe.prepTimeMinutes }} minuts</p>
+          <p>Data de creació: {{ selectedRecipe.createdAt | date:'dd/MM/yyyy' }}</p>
+        </section>
+      } @else {
+        <p class="no-selection">
+          Selecciona una recepta per veure'n els detalls.
         </p>
-      </div>
+      }
+    } @else {
+      <p class="empty-message">
+        No s'han trobat receptes amb els filtres seleccionats.
+      </p>
     }
   </section>
 </main>
+```
