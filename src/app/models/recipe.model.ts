@@ -6,4 +6,5 @@ export interface Recipe {
   createdAt: string;
   prepTimeMinutes: number;
   featured: boolean;
+  status?: string;
 }
