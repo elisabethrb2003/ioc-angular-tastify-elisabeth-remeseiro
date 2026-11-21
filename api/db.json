@@ -1,0 +1,94 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "title": "Amanida mediterrània",
+      "description": "Amanida fresca amb tomàquet, cogombre, olives i formatge feta.",
+      "category": "Amanides",
+      "createdAt": "2026-01-10",
+      "prepTimeMinutes": 15,
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "Pasta amb pesto",
+      "description": "Pasta italiana amb salsa pesto d'alfàbrega i pinyons.",
+      "category": "Pasta",
+      "createdAt": "2026-01-12",
+      "prepTimeMinutes": 25,
+      "featured": true
+    },
+    {
+      "id": 3,
+      "title": "Crema de carbassa",
+      "description": "Crema suau de carbassa amb un toc de nou moscada.",
+      "category": "Sopes i cremes",
+      "createdAt": "2026-01-15",
+      "prepTimeMinutes": 35,
+      "featured": false
+    },
+    {
+      "id": 4,
+      "title": "Truita de patates",
+      "description": "Truita tradicional de patates i ceba.",
+      "category": "Plats principals",
+      "createdAt": "2026-01-18",
+      "prepTimeMinutes": 40,
+      "featured": true
+    },
+    {
+      "id": 5,
+      "title": "Brownie de xocolata",
+      "description": "Pastís de xocolata amb nous i textura esponjosa.",
+      "category": "Postres",
+      "createdAt": "2026-01-20",
+      "prepTimeMinutes": 45,
+      "featured": true
+    },
+    {
+      "id": 6,
+      "title": "Gaspatxo andalús",
+      "description": "Sopa freda de tomàquet, pebrot, cogombre i oli d'oliva.",
+      "category": "Sopes i cremes",
+      "createdAt": "2026-01-22",
+      "prepTimeMinutes": 20,
+      "featured": false
+    },
+    {
+      "id": 7,
+      "title": "Pizza margarita",
+      "description": "Pizza casolana amb tomàquet, mozzarella i alfàbrega.",
+      "category": "Plats principals",
+      "createdAt": "2026-01-25",
+      "prepTimeMinutes": 50,
+      "featured": true
+    },
+    {
+      "id": 8,
+      "title": "Creps dolces",
+      "description": "Creps fines ideals per acompanyar amb fruita o xocolata.",
+      "category": "Postres",
+      "createdAt": "2026-01-27",
+      "prepTimeMinutes": 20,
+      "featured": false
+    },
+    {
+      "id": 9,
+      "title": "Amanida de quinoa",
+      "description": "Amanida nutritiva de quinoa, alvocat i verdures fresques.",
+      "category": "Amanides",
+      "createdAt": "2026-01-29",
+      "prepTimeMinutes": 25,
+      "featured": false
+    },
+    {
+      "id": 10,
+      "title": "Espaguetis a la bolonyesa",
+      "description": "Espaguetis amb salsa de tomàquet i carn picada.",
+      "category": "Pasta",
+      "createdAt": "2026-02-01",
+      "prepTimeMinutes": 40,
+      "featured": true
+    }
+  ]
+}

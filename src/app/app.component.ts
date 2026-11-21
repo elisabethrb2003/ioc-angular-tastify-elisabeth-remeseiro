@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { Recipe } from './models/recipe.model';
-import { RECIPES_MOCK } from './data/recipes.mock';
+import { RecipeService } from './services/recipe.service';
 import { RecipeListComponent } from './components/recipe-list/recipe-list.component';
 import { RecipeFilterComponent } from './components/recipe-filter/recipe-filter.component';
 
@@ -12,12 +12,28 @@ import { RecipeFilterComponent } from './components/recipe-filter/recipe-filter.
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class App {
+export class App implements OnInit {
   public appName = 'Tastify';
-  recipes: Recipe[] = RECIPES_MOCK;
+
+  private recipeService = inject(RecipeService);
+
+  public loading = this.recipeService.loading;
+
+  recipes: Recipe[] = [];
   selectedCategory = 'Totes';
   searchText = '';
   selectedRecipe: Recipe | null = null;
+
+  ngOnInit(): void {
+    this.recipeService.getRecipes().subscribe({
+      next: (recipes) => {
+        this.recipes = recipes;
+      },
+      error: (error) => {
+        console.error('Error en carregar les receptes:', error);
+      }
+    });
+  }
 
   get categories(): string[] {
     return [...new Set(this.recipes.map(recipe => recipe.category))];

@@ -11,10 +11,15 @@
   <section class="recipes-section">
     <h2>Les nostres receptes</h2>
 
-    <p class="results-counter" role="status" aria-live="polite">
-      Resultats trobats: {{ filteredRecipes.length }}
-    </p>
-
+    @if (loading()) {
+      <p class="loading-message" role="status" aria-live="polite">
+        Carregant receptes...
+      </p>
+    } @else {
+      <p class="results-counter" role="status" aria-live="polite">
+        Resultats trobats: {{ filteredRecipes.length }}
+      </p>
+    }
     <app-recipe-filter
       [categories]="categories"
       (filtersApplied)="onFiltersApplied($event)"
