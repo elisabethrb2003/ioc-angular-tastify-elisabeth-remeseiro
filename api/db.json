@@ -1,7 +1,7 @@
 {
   "recipes": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Amanida mediterrània",
       "description": "Amanida fresca amb tomàquet, cogombre, olives i formatge feta.",
       "category": "Amanides",
@@ -10,7 +10,7 @@
       "featured": true
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Pasta amb pesto",
       "description": "Pasta italiana amb salsa pesto d'alfàbrega i pinyons.",
       "category": "Pasta",
@@ -19,7 +19,7 @@
       "featured": true
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Crema de carbassa",
       "description": "Crema suau de carbassa amb un toc de nou moscada.",
       "category": "Sopes i cremes",
@@ -28,7 +28,7 @@
       "featured": false
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "Truita de patates",
       "description": "Truita tradicional de patates i ceba.",
       "category": "Plats principals",
@@ -37,7 +37,7 @@
       "featured": true
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "Brownie de xocolata",
       "description": "Pastís de xocolata amb nous i textura esponjosa.",
       "category": "Postres",
@@ -46,7 +46,7 @@
       "featured": true
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "Gaspatxo andalús",
       "description": "Sopa freda de tomàquet, pebrot, cogombre i oli d'oliva.",
       "category": "Sopes i cremes",
@@ -55,7 +55,7 @@
       "featured": false
     },
     {
-      "id": 7,
+      "id": "7",
       "title": "Pizza margarita",
       "description": "Pizza casolana amb tomàquet, mozzarella i alfàbrega.",
       "category": "Plats principals",
@@ -64,7 +64,7 @@
       "featured": true
     },
     {
-      "id": 8,
+      "id": "8",
       "title": "Creps dolces",
       "description": "Creps fines ideals per acompanyar amb fruita o xocolata.",
       "category": "Postres",
@@ -73,7 +73,7 @@
       "featured": false
     },
     {
-      "id": 9,
+      "id": "9",
       "title": "Amanida de quinoa",
       "description": "Amanida nutritiva de quinoa, alvocat i verdures fresques.",
       "category": "Amanides",
@@ -82,13 +82,32 @@
       "featured": false
     },
     {
-      "id": 10,
+      "id": "10",
       "title": "Espaguetis a la bolonyesa",
       "description": "Espaguetis amb salsa de tomàquet i carn picada.",
       "category": "Pasta",
       "createdAt": "2026-02-01",
       "prepTimeMinutes": 40,
       "featured": true
+    },
+    {
+      "title": "Pastís de poma de prova",
+      "description": "Pastís casolà amb poma i canyella.",
+      "category": "Postres",
+      "createdAt": "2026-11-23",
+      "prepTimeMinutes": 30,
+      "featured": false,
+      "id": "ZrjUYBDiL-c"
+    },
+    {
+      "title": "Recepta de prova",
+      "description": "Aixo es una recepta de prova",
+      "category": "Pasta",
+      "createdAt": "2026-11-23",
+      "prepTimeMinutes": 30,
+      "featured": false,
+      "id": "tFBt9u_6U5Q"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

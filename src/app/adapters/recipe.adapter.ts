@@ -24,7 +24,7 @@ export function adaptRecipe(apiRecipe: ApiRecipe): Recipe {
   const featured = apiRecipe.featured ?? false;
 
   return {
-    id: Number(apiRecipe.id),
+    id: apiRecipe.id,
     title,
     description,
     category,

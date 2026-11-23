@@ -11,6 +11,75 @@
   <section class="recipes-section">
     <h2>Les nostres receptes</h2>
 
+    <section class="create-recipe">
+      <h3>Afegir una recepta nova</h3>
+
+      <form (ngSubmit)="onCreateRecipe()">
+        <label for="title">Nom de la recepta</label>
+        <input
+          id="title"
+          name="title"
+          type="text"
+          [(ngModel)]="newRecipe.title"
+          required
+        />
+
+        <label for="description">Descripció</label>
+        <textarea
+          id="description"
+          name="description"
+          [(ngModel)]="newRecipe.description"
+          required
+        ></textarea>
+
+        <label for="category">Categoria</label>
+        <input
+          id="category"
+          name="category"
+          type="text"
+          [(ngModel)]="newRecipe.category"
+          required
+        />
+
+        <label for="prepTimeMinutes">Temps de preparació (minuts)</label>
+        <input
+          id="prepTimeMinutes"
+          name="prepTimeMinutes"
+          type="number"
+          min="0"
+          [(ngModel)]="newRecipe.prepTimeMinutes"
+          required
+        />
+
+        <label for="featured">
+          <input
+            id="featured"
+            name="featured"
+            type="checkbox"
+            [(ngModel)]="newRecipe.featured"
+          />
+          Recepta destacada
+        </label>
+
+        <button type="submit" [disabled]="loading()">
+          Crear recepta
+        </button>
+      </form>
+
+      @if (success()) {
+        <p role="status">{{ success() }}</p>
+      }
+    </section>
+
+    @if (error()) {
+      <div class="error-message" role="alert">
+        <p>{{ error() }}</p>
+        <button type="button" (click)="onRetry()">
+          Tornar-ho a provar
+        </button>
+      </div>
+    }
+
     @if (loading()) {
       <p class="loading-message" role="status" aria-live="polite">
         Carregant receptes...
