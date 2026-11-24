@@ -90,3 +90,69 @@ L'EAC2 incorpora els components necessaris per consultar i filtrar receptes a Ta
 - Etiquetes associades als camps del formulari.
 - Ús de `role="status"`, `aria-live` i `role="alert"`.
 - Disseny adaptable a pantalles de diferents amplades.
+
+## Estat de l'EAC3
+
+L'EAC3 incorpora la comunicació amb una API local mitjançant serveis HTTP.
+
+### Branca de treball
+
+`ra3-serveis`
+
+### API local
+
+- Servidor desenvolupat amb `json-server`.
+- Fitxer de dades: `api/db.json`.
+- Endpoint principal: `http://localhost:3000/recipes`.
+- Comanda per iniciar l'API: `npm run api`.
+
+### Serveis i models
+
+- `RecipeService`: gestiona les peticions HTTP GET i POST.
+- `ApiRecipe`: representa les dades rebudes de l'API.
+- `Recipe`: representa el model intern de l'aplicació.
+- `adaptRecipe()`: adapta i normalitza les dades de l'API.
+- Estats de càrrega, error i èxit mitjançant signals.
+- Cerca reactiva amb `debounceTime`, `distinctUntilChanged` i `switchMap`.
+
+### Formularis i validacions de l'EAC3
+
+L'EAC3 incorpora un formulari reactiu per cercar i filtrar receptes.
+
+- Ús de `ReactiveFormsModule`.
+- Cerca per text i filtratge per categoria.
+- Validació síncrona amb `Validators.minLength(3)`.
+- Validació asíncrona amb `recipeSearchValidator`.
+- Comprovació de resultats a través de `RecipeService`.
+- Missatges d'error i estat de comprovació.
+- Botó per netejar la cerca.
+- Historial de cerques amb `localStorage`.
+- Recuperació de cerques anteriors i control d'errors amb `try/catch`.
+
+## Execució del projecte
+
+Cal obrir dos terminals:
+
+Terminal 1 — API:
+
+`npm run api`
+
+Terminal 2 — Angular:
+
+`ng serve`
+
+L'aplicació estarà disponible a `http://localhost:4200` i l'API a `http://localhost:3000/recipes`.
+
+## Proves i compilació
+
+Per executar les proves:
+
+`npm test`
+
+Per compilar el projecte:
+
+`npm run build`
+
+## Branca de lliurament
+
+La branca final de treball és `ra3-serveis`.
