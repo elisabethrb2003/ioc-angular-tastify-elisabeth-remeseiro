@@ -1,4 +1,4 @@
-<form #filterForm="ngForm" (ngSubmit)="applyFilters()" class="recipe-filter">
+<form [formGroup]="filterForm" (ngSubmit)="applyFilters()" class="recipe-filter">
 
   <div class="filter-field">
     <label for="searchText">Cerca una recepta:</label>
@@ -6,21 +6,26 @@
     <input
       type="text"
       id="searchText"
-      name="searchText"
-      [(ngModel)]="searchText"
-      required
-      minlength="3"
-      #searchInput="ngModel"
+      formControlName="searchText"
       placeholder="Escriu almenys 3 caràcters..."
     />
 
-    @if (searchInput.invalid && (searchInput.dirty || searchInput.touched)) {
+    @if (filterForm.controls.searchText.invalid &&
+         filterForm.controls.searchText.touched &&
+         filterForm.controls.searchText.errors?.['minlength']) {
       <p class="error-message" role="alert">
-        @if (searchInput.errors?.['required']) {
-          El camp de cerca és obligatori.
-        } @else if (searchInput.errors?.['minlength']) {
-          La cerca ha de tenir almenys 3 caràcters.
-        }
+        La cerca ha de tenir almenys 3 caràcters.
+      </p>
+    }
+
+    @if (filterForm.controls.searchText.pending) {
+      <p role="status">Comprovant si hi ha resultats...</p>
+    }
+
+    @if (filterForm.controls.searchText.errors?.['noResults'] &&
+         filterForm.controls.searchText.touched) {
+      <p class="error-message" role="alert">
+        No s'han trobat receptes amb aquest terme.
       </p>
     }
   </div>
@@ -28,11 +33,7 @@
   <div class="filter-field">
     <label for="category">Categoria:</label>
 
-    <select
-      id="category"
-      name="category"
-      [(ngModel)]="selectedCategory"
-    >
+    <select id="category" formControlName="category">
       <option value="Totes">Totes les categories</option>
 
       @for (category of categories; track category) {
@@ -42,13 +43,35 @@
   </div>
 
   <div class="filter-buttons">
-    <button type="submit" [disabled]="filterForm.invalid">
+    <button
+      type="submit"
+      [disabled]="filterForm.invalid || filterForm.pending"
+    >
       Aplicar filtres
     </button>
 
     <button type="button" (click)="resetFilters()">
-      Restablir filtres
+      Netejar cerca
     </button>
   </div>
 
 </form>
+
+@if (searchHistory.length > 0) {
+  <section class="search-history">
+    <h3>Historial de cerques</h3>
+
+    <ul>
+      @for (term of searchHistory; track term) {
+        <li>
+          <button
+            type="button"
+            (click)="restoreSearch(term)"
+          >
+            {{ term }}
+          </button>
+        </li>
+      }
+    </ul>
+  </section>
+}
